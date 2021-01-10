@@ -1,0 +1,23 @@
+.sidenav{
+    background-color: #595771;
+    border: none;
+    width: 18%;
+    position: fixed;
+}
+.sidenav a{
+    color: #fff;
+    font-size: 1rem;
+}
+
+.sidenav a i{
+    margin-right: 10px;
+}
+
+.content{
+    padding: 10px;
+    background-color: #fff;
+}
+
+.container{
+    overflow: hidden;
+}
