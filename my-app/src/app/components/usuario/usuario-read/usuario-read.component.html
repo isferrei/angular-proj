@@ -12,7 +12,7 @@
           <span class="mat-cell">{{usuario.id}}</span>
           <span class="mat-cell">{{usuario.username}}</span>
           <span class="mat-cell">{{usuario.email}}</span>
-          <span class="mat-cell">
+          <span class="mat-cell" (click)="addToFavoritos(usuario)">
             <app-favorito-button></app-favorito-button>
           </span>
         </mat-expansion-panel-header>

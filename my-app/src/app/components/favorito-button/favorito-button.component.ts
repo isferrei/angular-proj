@@ -13,11 +13,14 @@ export class FavoritoButtonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    localStorage.getItem('selected');
   }
 
-  public toggleSelected() {
+  public toggleSelected(value) {
     this.selected = !this.selected;
     this.selectedChange.emit(this.selected);
+   
+    localStorage.setItem('selected', value);
   }
 
 }

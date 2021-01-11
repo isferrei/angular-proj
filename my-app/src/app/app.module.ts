@@ -23,9 +23,9 @@ import { MatExpansionModule } from '@angular/material/expansion'
 import {AgmCoreModule} from '@agm/core';
 import { FavoritoButtonComponent } from './components/favorito-button/favorito-button.component';
 import {MatIconModule} from '@angular/material/icon';
-import {Validators} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormControl} from '@angular/forms';
+import {MatButtonToggleModule} from '@angular/material/button-toggle'
+
 
 import { FavoritosComponent } from './views/favoritos/favoritos.component';
 import { LoginComponent } from './views/login/login.component';
@@ -62,9 +62,8 @@ import { LoginSessaoComponent } from './components/account/login-sessao/login-se
     MatExpansionModule,
     AgmCoreModule.forRoot({apiKey:'AIzaSyB2nUlhP7qGp91AG89UsOQaKnwFE720Iqk'}),
     MatIconModule,
-    FormControl,
-    Validators,
     MatFormFieldModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

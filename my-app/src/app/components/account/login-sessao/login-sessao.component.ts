@@ -8,7 +8,7 @@ import { AccountService } from '../shared/account.service';
   styleUrls: ['./login-sessao.component.css']
 })
 export class LoginSessaoComponent implements OnInit {
-  login={
+  login = {
     email: '',
     senha:''
   };

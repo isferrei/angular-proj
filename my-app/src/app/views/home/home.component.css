@@ -9,3 +9,7 @@
     font-size: 1.2em;
     line-height:10px;
 }
+
+body{
+    overflow:scroll;
+}

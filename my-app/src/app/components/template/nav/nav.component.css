@@ -1,8 +1,12 @@
-.sidenav{
+.mat-sidenav{
     background-color: #595771;
     border: none;
     width: 15%;
     position: fixed;
+    top: 0;
+    padding-top: 20px;
+    height: 100%;
+    overflow: hidden;
 }
 .sidenav a{
     color: #fff;
@@ -13,7 +17,7 @@
     margin-right: 10px;
 }
 
-.content{
+.mat-sidenav-content{
     padding: 10px;
     background-color: #fff;
 }

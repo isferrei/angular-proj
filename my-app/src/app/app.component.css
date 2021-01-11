@@ -1,3 +1,2 @@
-.mat-body, .mat-typography{
-    overflow: hidden !important;
-}
+
+body{overflow: hidden;}

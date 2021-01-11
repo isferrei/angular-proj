@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../usuario.model';
 import { UsuarioService } from '../usuario.service';
+import {FavoritoService} from '../../favorito-button/favorito.service'
 import {Observable} from 'rxjs'
 
 @Component({
@@ -10,13 +11,21 @@ import {Observable} from 'rxjs'
 })
 export class UsuarioReadComponent implements OnInit {
 
+   addToFavoritos(usuario){
+    this.favoritoService.addToFavoritos(usuario);
+    this.usuarioService.showMessage("Usuário favoritado")
+    localStorage.setItem('selected', usuario);
+  }
+
   usuarios: Usuario[]
   displayedRows$: Observable<Usuario[]>;
   displayedColumns = ['id', 'name', 'email', 'more', 'favorite'];
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService, private favoritoService: FavoritoService) { }
 
   ngOnInit(): void {
+    localStorage.getItem('selected')
+
     this.usuarioService.read().subscribe(usuarios => {
       this.usuarios = usuarios;
       console.log(usuarios)
@@ -24,6 +33,5 @@ export class UsuarioReadComponent implements OnInit {
       console.log("Erro ao listar usuarios!", err);
     }
     )
-
   }
 }
