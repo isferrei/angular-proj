@@ -25,3 +25,7 @@
 .container{
     overflow: hidden;
 }
+
+.content{
+    margin-top: 64px;
+}

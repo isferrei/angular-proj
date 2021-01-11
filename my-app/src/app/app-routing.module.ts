@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import {HomeComponent} from './views/home/home.component';
 import {FavoritosComponent} from './views/favoritos/favoritos.component';
+import {LoginSessaoComponent} from './components/account/login-sessao/login-sessao.component';
 
 const routes: Routes = [
   {path: "", component: HomeComponent},

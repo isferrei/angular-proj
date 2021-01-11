@@ -24,7 +24,7 @@ import {AgmCoreModule} from '@agm/core';
 import { FavoritoButtonComponent } from './components/favorito-button/favorito-button.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatButtonToggleModule} from '@angular/material/button-toggle'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { FavoritosComponent } from './views/favoritos/favoritos.component';
@@ -63,7 +63,8 @@ import { LoginSessaoComponent } from './components/account/login-sessao/login-se
     AgmCoreModule.forRoot({apiKey:'AIzaSyB2nUlhP7qGp91AG89UsOQaKnwFE720Iqk'}),
     MatIconModule,
     MatFormFieldModule,
-    MatButtonToggleModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

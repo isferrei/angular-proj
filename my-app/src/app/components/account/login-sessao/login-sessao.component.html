@@ -1,20 +1,15 @@
-<!-- <h1>Entrar</h1>
+<h1>Entrar</h1>
 
-<form (ngSubmit)="onSubmit()" #form="ngForm">
-    <div class="form-group">
-        <mat-form-field appearance="fill">
+<form class="form">
+        <mat-form-field class="field" formGroup appearance="fill">
             <mat-label>Email</mat-label>
-            <input matInput name="email" id="email" placeholder="pat@example.com" [(ngModel)]="login.email" required>
+            <input matInput class="input" formControlName="email" placeholder="pat@example.com" required autofocus>
         </mat-form-field>
         
-        <mat-form-field appearance="fill">
-            <mat-label>Email</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" name="senha" id="senha" placeholder="pat@example.com" [(ngModel)]="login.email" required>
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
+        <mat-form-field class="field" formGroup appearance="fill">
+            <mat-label>Senha</mat-label>
+            <input matInput type="password" formControlName="senha" class="input" required>
         </mat-form-field>
-    </div>
-    <button type="submit" class="btn btn-primary btn-block" [disabled]="form.form.invalid">Entrar</button>
-    <button type="submit" class="btn btn-primary btn-block" [routerLink]="['/cadastro']">Criar conta</button>
-</form> -->
+
+    <button type="submit" mat-raised-button color="primary" class="button">Entrar</button>
+</form>

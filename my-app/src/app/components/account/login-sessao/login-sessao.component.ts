@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AccountService } from '../shared/account.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 
 @Component({
   selector: 'app-login-sessao',
@@ -8,25 +9,22 @@ import { AccountService } from '../shared/account.service';
   styleUrls: ['./login-sessao.component.css']
 })
 export class LoginSessaoComponent implements OnInit {
-  login = {
-    email: '',
-    senha:''
-  };
+  
+  email: string
+  senha: string
+  loginForm: FormGroup;
 
-  constructor(private accountService: AccountService, private router: Router) {}
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      email: ['isa@gmail.com', Validators.required],
+      senha: ['123', Validators.required]
+    });
   }
 
     async onSubmit() {
-      try{
-        const result = await this.accountService.login(this.login);
-        console.log('Login efetuado: ${result}');
-
-        this.router.navigate(['/login']);
-      }catch(error){
-        console.error(error);
-      }
+   
       }
     }
 

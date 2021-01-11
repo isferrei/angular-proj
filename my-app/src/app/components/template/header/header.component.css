@@ -2,4 +2,10 @@
 .logo{
     display: flex;
     max-height: 55px;
+    margin-left: 100%;
+}
+
+.header{
+    z-index: 2;
+    position: fixed;
 }

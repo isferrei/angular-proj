@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class FavoritoService {
 
   favoritos=[];
-
+  
   addToFavoritos(usuario){
     this.favoritos.push(usuario)
   }
@@ -19,5 +19,8 @@ export class FavoritoService {
     const index: number = this.favoritos.indexOf(favorito);
         this.favoritos.splice(index, 1);       
   }
+
   constructor() { }
+
+ 
 }
