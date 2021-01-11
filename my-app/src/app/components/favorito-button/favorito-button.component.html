@@ -1,0 +1,15 @@
+<button mat-icon-button (click)="toggleSelected()">
+
+    <mat-icon
+      *ngIf="selected"
+        class="favorite">
+      favorite
+    </mat-icon>
+  
+    <mat-icon
+      *ngIf="!selected"
+      >
+      favorite_border
+    </mat-icon>
+  
+</button>

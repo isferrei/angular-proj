@@ -1,32 +1,36 @@
-<div class="mat-elevation-z8">
-    <table mat-table class="table" matSort [dataSource]="usuarios">
-            <ng-container matColumnDef="id">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
-              <td mat-cell *matCellDef="let row">{{row.id}}</td>
-            </ng-container>
-        
-            <ng-container matColumnDef="name">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome</th>
-              <td mat-cell *matCellDef="let row">{{row.name}}</td>
-            </ng-container>
-        
-            <ng-container matColumnDef="email">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
-              <td mat-cell *matCellDef="let row">{{row.email}}</td>
-            </ng-container>
+<!-- <div class="mat-elevation-z8"> -->
+    <mat-accordion displayMode="flat" multi class="mat-table">
+      <section matSort class="mat-elevation-z2 mat-header-row">
+        <span class="mat-header-cell" mat-header="id">Id</span>
+        <span class="mat-header-cell" mat-header="name">Nome de usuário</span>
+        <span class="mat-header-cell" mat-header="email">email</span>
+        <span class="mat-header-cell" mat-header="favorite"></span>
+      </section>
 
-            <ng-container matColumnDef="more">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
-              <td mat-cell *matCellDef="let row" (click)="openDialog()"><i class="material-icons">assignment_ind</i></td>
-            </ng-container>
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-  
-    <!-- <mat-paginator #paginator
-        [pageIndex]="0"
-        [pageSize]="10"
-        [pageSizeOptions]="[5, 10, 25]">
-    </mat-paginator> -->
-  </div>
-  
+      <mat-expansion-panel *ngFor="let usuario of usuarios">
+        <mat-expansion-panel-header class="mat-row">
+          <span class="mat-cell">{{usuario.id}}</span>
+          <span class="mat-cell">{{usuario.username}}</span>
+          <span class="mat-cell">{{usuario.email}}</span>
+          <span class="mat-cell">
+            <app-favorito-button></app-favorito-button>
+          </span>
+        </mat-expansion-panel-header>
+        <div><pre>
+
+            <ul class="lista">
+              <li><p>Nome completo:</p> {{usuario.name}}</li>
+              <li><p>Telefone:</p> {{usuario.phone}}</li>
+              <li><p>Site:</p> www.{{usuario.website}}</li>
+              <li><p>Nome da empresa:</p> {{usuario.company.name}}</li>
+              <li class="mapa"><p>Mapa do endereço do usuário:</p>
+                <agm-map [latitude]='+usuario.address.geo.lat' [longitude]='+usuario.address.geo.lng'>
+                  <agm-marker [latitude]='+usuario.address.geo.lat' [longitude]='+usuario.address.geo.lng'></agm-marker>
+                </agm-map>
+              </li>
+            </ul>
+
+        </pre></div>
+      </mat-expansion-panel>
+    </mat-accordion>
+<!-- </div> -->
