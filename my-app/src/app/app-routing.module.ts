@@ -6,7 +6,8 @@ import {FavoritosComponent} from './views/favoritos/favoritos.component';
 import {LoginSessaoComponent} from './components/account/login-sessao/login-sessao.component';
 
 const routes: Routes = [
-  {path: "", component: HomeComponent},
+  {path: "", component: LoginSessaoComponent},
+  {path: "home", component: HomeComponent},
   {path: "favoritos",  component: FavoritosComponent}
 ];
 

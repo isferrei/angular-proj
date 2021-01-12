@@ -1,15 +1,14 @@
-<h1>Entrar</h1>
+<mat-card class="card">
+    <h1>Entrar</h1>
+    <div class="field" appearance="fill">
+        <label>Email</label>
+        <input type="text" [(ngModel)]="usuario.email" id="email"  class="input" placeholder="email@example.com" required>
+    </div>
 
-<form class="form">
-        <mat-form-field class="field" formGroup appearance="fill">
-            <mat-label>Email</mat-label>
-            <input matInput class="input" formControlName="email" placeholder="pat@example.com" required autofocus>
-        </mat-form-field>
-        
-        <mat-form-field class="field" formGroup appearance="fill">
-            <mat-label>Senha</mat-label>
-            <input matInput type="password" formControlName="senha" class="input" required>
-        </mat-form-field>
+    <div class="field" appearance="fill">
+        <label>Senha</label>
+        <input type="password" [(ngModel)]="usuario.senha" id="senha" class="input" required>
+    </div>
 
-    <button type="submit" mat-raised-button color="primary" class="button">Entrar</button>
-</form>
+    <button  mat-raised-button color="primary" class="button" (click)="fazerLogin()">Entrar</button>
+</mat-card>

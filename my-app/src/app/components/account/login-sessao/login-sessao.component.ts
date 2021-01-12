@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AccountService } from '../shared/account.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms'
+import { AuthService } from '../shared/auth.service';
+import { Usuario } from './usuario'
 
 @Component({
   selector: 'app-login-sessao',
@@ -10,21 +12,15 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 })
 export class LoginSessaoComponent implements OnInit {
   
-  email: string
-  senha: string
-  loginForm: FormGroup;
+   usuario: Usuario = new Usuario();
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
-      email: ['isa@gmail.com', Validators.required],
-      senha: ['123', Validators.required]
-    });
+  ngOnInit() {
   }
 
-    async onSubmit() {
-   
-      }
-    }
+  fazerLogin(){
+   this.authService.fazerLogin(this.usuario);
+  }
 
+}
