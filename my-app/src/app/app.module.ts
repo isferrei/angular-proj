@@ -28,7 +28,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { FavoritosComponent } from './views/favoritos/favoritos.component';
-import { LoginComponent } from './views/login/login.component';
 import { CadastroComponent } from './components/account/cadastro/cadastro.component';
 import { LoginSessaoComponent } from './components/account/login-sessao/login-sessao.component'
 import { AuthService } from './components/account/shared/auth.service';
@@ -41,7 +40,6 @@ import { AuthService } from './components/account/shared/auth.service';
     UsuarioReadComponent,
     FavoritoButtonComponent,
     FavoritosComponent,
-    LoginComponent,
     CadastroComponent,
     LoginSessaoComponent,
   ],
